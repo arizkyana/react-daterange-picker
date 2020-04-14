@@ -28,7 +28,7 @@ const styles = createStyles({
 	icon: {
 		padding: 10,
 		"&:hover": {
-			background: "none"
+			background: "red"
 		}
 	}
 });

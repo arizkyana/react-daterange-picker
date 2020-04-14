@@ -16,10 +16,13 @@ import DefinedRanges from "./DefinedRanges";
 import { DateRange, DefinedRange, Setter, NavigationAction } from "../types";
 import { MARKERS } from "..";
 
+import tkthemes from "../tkthemes";
+
 const styles = (theme: Theme) =>
 	createStyles({
 		header: {
-			padding: "20px 70px"
+			padding: "20px 70px",
+			background: tkthemes.primary.white
 		},
 		headerItem: {
 			flex: 1,
@@ -28,6 +31,10 @@ const styles = (theme: Theme) =>
 		divider: {
 			borderLeft: `1px solid ${theme.palette.action.hover}`,
 			marginBottom: 20
+		},
+		layout: {
+			position: 'absolute',
+			zIndex: 125,
 		}
 	});
 
@@ -70,7 +77,7 @@ const Menu: React.FunctionComponent<MenuProps> = props => {
 	const canNavigateCloser = differenceInCalendarMonths(secondMonth, firstMonth) >= 2;
 	const commonProps = { dateRange, minDate, maxDate, helpers, handlers };
 	return (
-		<Paper elevation={5} square>
+		<Paper className={classes.layout} elevation={5} square>
 			<Grid container direction="row" wrap="nowrap">
 				<Grid>
 					<Grid container className={classes.header} alignItems="center">

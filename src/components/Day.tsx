@@ -8,6 +8,7 @@ import {
 	withStyles
 } from "@material-ui/core";
 import { combine } from "../utils";
+import tkthemes from "../tkthemes";
 
 interface DayProps extends WithStyles<typeof styles> {
 	filled?: boolean;
@@ -41,13 +42,13 @@ const styles = (theme: Theme) =>
 			lineHeight: 1.6
 		},
 		outlined: {
-			border: `1px solid ${theme.palette.primary.dark}`
+			border: `1px solid ${tkthemes.primary.color}`
 		},
 		filled: {
 			"&:hover": {
-				backgroundColor: theme.palette.primary.dark
+				backgroundColor: tkthemes.primary.color
 			},
-			backgroundColor: theme.palette.primary.dark
+			backgroundColor: tkthemes.primary.color
 		},
 		highlighted: {
 			backgroundColor: theme.palette.action.hover
